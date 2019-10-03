@@ -4,15 +4,19 @@ using System.Linq;
 using System.Xml.Linq;
 using XMLGenerator.BLL.Interface;
 using XMLGenerator.DAL.Interface;
-using NLog;
+using Logger.Interface;
+
 namespace XMLGenerator.BLL
 {
     public class XMLConverter : IConverter
     {
         private readonly IDataReader dataReader;
-        public XMLConverter(IDataReader dataReader)
+        private readonly ILog log;
+
+        public XMLConverter(IDataReader dataReader, ILog log)
         {
             this.dataReader = dataReader;
+            this.log = log;
         }
 
         public XElement Convert()
@@ -25,8 +29,7 @@ namespace XMLGenerator.BLL
             {
                 if (!Validate(url))
                 {
-                    Logger logger = LogManager.GetLogger(url);
-                    logger.Error(url);
+                    log.Log(url);
                 }
                 else
                 {

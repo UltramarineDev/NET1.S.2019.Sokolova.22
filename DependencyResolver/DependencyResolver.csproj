@@ -50,6 +50,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logger.Interface\Logger.Interface.csproj">
+      <Project>{bee6f2ed-7f89-4732-8460-84628948617e}</Project>
+      <Name>Logger.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{9dba67f3-0ea5-4c77-a4da-401b55d627c6}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XMLGenerator.BLL.Interface\XMLGenerator.BLL.Interface.csproj">
       <Project>{300c29eb-b9f2-447c-9ab9-8a6f1f67b7ed}</Project>
       <Name>XMLGenerator.BLL.Interface</Name>

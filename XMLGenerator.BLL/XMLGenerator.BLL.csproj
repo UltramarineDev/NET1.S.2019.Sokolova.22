@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.6.7\lib\net45\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -53,6 +50,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logger.Interface\Logger.Interface.csproj">
+      <Project>{bee6f2ed-7f89-4732-8460-84628948617e}</Project>
+      <Name>Logger.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XMLGenerator.BLL.Interface\XMLGenerator.BLL.Interface.csproj">
       <Project>{300c29eb-b9f2-447c-9ab9-8a6f1f67b7ed}</Project>
       <Name>XMLGenerator.BLL.Interface</Name>
@@ -61,15 +62,6 @@
       <Project>{e95489d6-eb5d-4e1e-bd98-52ef5fa5917e}</Project>
       <Name>XMLGenerator.DAL.Interface</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
